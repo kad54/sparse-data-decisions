@@ -47,10 +47,10 @@ def chart_style(ax):
 
 with simulation:
     st.write(
-        "Imagine you must send an essential delivery, but you have very little information about possible delays. Which option should you choose?"
+        "Imagine you must choose one of three ways to complete a task, but you have only a few observations of their delays. Which option should you choose?"
     )
     st.caption(
-        "Three hypothetical civilian supply corridors, inspired by Poland–Ukraine logistics. A, B and C are not verified real routes."
+        "Three abstract alternatives, labelled Corridor A, B and C. All delays are simulated; no real locations or routes are represented."
     )
     a, b = st.columns(2)
     n = a.slider("Number of observations per corridor", 1, 20, 3)
@@ -207,7 +207,7 @@ with experiments:
 with extensions:
     st.subheader("Future research · not implemented")
     ideas = {
-        "POMDPs": "Choose a sequence of actions while updating beliefs as observations arrive. This could extend a one-off delivery choice to repeated decisions: how much history is needed for a useful policy?",
+        "POMDPs": "Choose a sequence of actions while updating beliefs as observations arrive. This could extend a one-off choice to repeated decisions: how much history is needed for a useful policy?",
         "PAC-Bayes": "Study statistical bounds for decision rules learned from limited data. Could a bound on decision loss require less information than accurately estimating the entire state, under explicit assumptions?",
         "Value of information": "Compare the expected benefit of another observation with its cost. When should we stop collecting data because the next sample is unlikely to change the choice?",
         "Anytime optimisation": "Return a usable answer under a strict computation budget, improving it as time allows. How much decision quality is lost when posterior sampling must stop early?",
@@ -221,7 +221,7 @@ with extensions:
 with methodology:
     st.subheader("What is known, estimated and hidden?")
     st.write(
-        "**All data is synthetic.** No public API is connected in this version. The corridor names are placeholders; this demo gives no operational logistics recommendations."
+        "**All data is synthetic.** No public API is connected in this version. The corridor names are placeholders; this demo studies general decision rules, not a specific operational system."
     )
     st.write(
         "**Hidden state:** three independent mean delays, drawn uniformly from 20 to 100 minutes, fixed within an episode. **Observations:** independent Normal noise around each mean, with a known SD of 10, 25 or 50 minutes. **Estimates:** sample means or Bayesian posterior means computed only from those observations."

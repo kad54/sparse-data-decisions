@@ -4,9 +4,17 @@ A minimal offline Python research POC about **decision sufficiency**: can we ide
 
 ## What it demonstrates
 
-Choose among three hypothetical civilian supply-delivery corridors inspired by the border logistics. A few noisy observations inform a one-off decision. Hidden simulated means let us measure the cost of choosing incorrectly. These are synthetic alternatives, not verified routes or operational recommendations.
+Choose among three abstract alternatives with unknown average delays. A few noisy observations inform a one-off decision, and hidden simulated means let us measure the cost of choosing incorrectly. The alternatives are labelled Corridor A, B and C for convenience; they do not represent real locations or routes.
 
 Four tabs: Simulation, Research Experiments, Possible Extensions, and Data & Methodology. The main view has one chart, three decisions, simulated regret and a plain-language explanation. Experiments run 100 independent episodes at each of seven observation counts (700 combinations), with shared observations across methods and nested samples across counts.
+
+## Research motivation
+
+The PhD research question is whether the information needed to choose a good action can be smaller than the information needed to estimate an entire system accurately. This POC makes the distinction measurable by comparing decision regret with state-estimation error under limited observations.
+
+The three-action model is a controlled starting point: it isolates the roles of sample size, noise, prior assumptions and decision objectives. The same mathematical question could be explored in service selection, computing systems or resource allocation, but this simulation does not validate those applications. Its contribution is a reproducible experiment and a transparent account of its limitations, rather than a new algorithm or a general theorem.
+
+A subsequent research step would test unequal observation counts or model misspecification, asking when improved inference changes the decision and when additional information is worth collecting.
 
 ## Mathematical methods
 
